@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>신준호 Portfolio</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
@@ -13,7 +13,6 @@
             box-sizing: border-box;
         }
 
-        
         body {
             font-family: 'Poppins', sans-serif;
             background-color: #0a0a0a;
@@ -28,26 +27,14 @@
         }
 
         .hero-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-    opacity: 0.6;
-}
-        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            z-index: 0;
             opacity: 0.6;
-            animation: zoomIn 20s infinite alternate;
-        }
-
-        @keyframes zoomIn {
-            from { transform: scale(1); }
-            to { transform: scale(1.1); }
         }
 
         .hero-content {
@@ -91,6 +78,134 @@
         .content-section {
             padding: 100px 5%;
             background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+        }
+
+        .profile-section {
+            max-width: 1200px;
+            margin: 0 auto 80px auto;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 50px;
+            align-items: start;
+            background: rgba(255,255,255,0.05);
+            border-radius: 30px;
+            padding: 50px;
+            backdrop-filter: blur(10px);
+        }
+
+        .profile-card {
+            background: linear-gradient(135deg, #2196F3, #1976D2);
+            border-radius: 20px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 20px 40px rgba(33, 150, 243, 0.3);
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 200px;
+            border-radius: 15px;
+            margin: 0 auto 20px auto;
+            display: block;
+            object-fit: cover;
+            border: 3px solid rgba(255,255,255,0.2);
+        }
+
+        .profile-name {
+            font-size: 2em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .profile-skills {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .skill-label {
+            font-size: 0.9em;
+            color: rgba(255,255,255,0.8);
+            margin-bottom: 5px;
+        }
+
+        .skill-value {
+            font-size: 1.2em;
+            font-weight: 600;
+            color: #FFD700;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .info-card {
+            background: rgba(255,255,255,0.02);
+            border-radius: 15px;
+            padding: 25px;
+            border-left: 4px solid #2196F3;
+        }
+
+        .info-card h3 {
+            color: #2196F3;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-card p, .info-card li {
+            color: #ccc;
+            margin-bottom: 8px;
+        }
+
+        .info-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .info-card li:before {
+            content: "✓ ";
+            color: #4CAF50;
+            font-weight: bold;
+        }
+
+        .goals-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .goals-section h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .goals-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .goal-item {
+            background: rgba(255,255,255,0.1);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: left;
+        }
+
+        .goal-item h4 {
+            color: #FFD700;
+            margin-bottom: 15px;
+            font-size: 1.2em;
         }
 
         .grid-container {
@@ -140,55 +255,86 @@
             transform: translateY(-5px);
         }
 
-      
+        .image-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 200px;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
 
-.image-grid {
-    display: flex;
-    justify-content: center; /* 수평 중앙 정렬 */
-    align-items: center;     /* 수직 중앙 정렬 (필요 시) */
-    gap: 200px;               /* 객체 사이의 간격 */
-    flex-wrap: wrap;
-    margin-top: 50px;
-}
+        .portfolio-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.3s;
+        }
 
         .portfolio-image:hover {
             transform: scale(1.05);
         }
 
-        @media (max-width: 768px) {
-            .hero-title {
-                font-size: 2.5em;
-            }
-
-            .hero-subtitle {
-                font-size: 1.2em;
-            }
-
-            .content-section {
-                padding: 50px 5%;
-            }
+        /* 네비게이션 스타일 */
+        .circle-nav {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 51, 102, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 1000;
+            transition: background 0.3s;
+            font-size: 1.5em;
+            color: #fff;
         }
 
-        /* 스크롤바 스타일링 */
-        ::-webkit-scrollbar {
-            width: 10px;
+        .circle-nav:hover {
+            background: rgba(255, 51, 102, 1);
         }
 
-        ::-webkit-scrollbar-track {
-            background: #1a1a1a;
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 200px;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            transition: right 0.3s ease;
+            z-index: 999;
         }
 
-        ::-webkit-scrollbar-thumb {
-            background: #ff3366;
-            border-radius: 5px;
+        .nav-menu.open {
+            right: 0;
         }
 
+        .nav-menu a {
+            color: #fff;
+            font-size: 1.2em;
+            text-decoration: none;
+            padding: 10px;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: #ff3366;
+        }
 
         /* 푸터 스타일 */
         .footer {
             background: linear-gradient(45deg, #0a0a0a, #1a1a1a);
             padding: 60px 5% 30px;
-            position: relative;
         }
 
         .footer-content {
@@ -259,127 +405,140 @@
             font-size: 0.9em;
         }
 
-        /* 동그란 네비게이션 버튼 */
-        .circle-nav {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        background: rgba(255, 51, 102, 0.5); /* 투명도 추가 */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        z-index: 1000;
-        transition: background 0.3s;
-    }
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 2.5em;
+            }
 
-    .circle-nav:hover {
-        background: rgba(255, 51, 102, 0.8);
-    }
+            .hero-subtitle {
+                font-size: 1.2em;
+            }
 
-    .nav-menu {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        width: 200px;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.7); /* 투명도 추가 */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 20px;
-        transition: right 0.3s ease;
-        z-index: 999;
+            .profile-section {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 30px;
+            }
 
-    }
+            .content-section {
+                padding: 50px 5%;
+            }
 
-    .nav-menu.open {
-        right: 0;
-    }
+            .image-grid {
+                gap: 50px;
+            }
+        }
 
-    .nav-menu a {
-    font-family: 'Poppins', sans-serif;
-    color: #fff;
-    font-size: 1.2em;
-    text-decoration: none;
-    padding: 10px;
-    transition: color 0.3s;
-}
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
 
-.nav-menu a:hover {
-    color: #ff3366;
-}
+        ::-webkit-scrollbar-track {
+            background: #1a1a1a;
+        }
 
-.circle-nav {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1.5em;
-    color: #fff;
-}
-
-
-
-
-
-.portfolio-item {
-    position: relative;
-    display: inline-block;
-    width: 200px;  /* 너비 200px */
-    height: 200px; /* 높이 200px */
-}
-
-.portfolio-image {
-    width: 100%;
-    height: auto;
-    width: 200px;  /* 너비 200px */
-    height: 200px; /* 높이 200px */
-}
-    transition: opacity 0.3s ease-in-out;
-}
-
-.portfolio-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: none; /* 기본적으로 숨김 */
-}
-
-.portfolio-item:hover .portfolio-image {
-    opacity: 0; /* 이미지 숨기기 */
-}
-
-.portfolio-item:hover .portfolio-video {
-    display: block; /* 비디오 보이기 */
-}
+        ::-webkit-scrollbar-thumb {
+            background: #ff3366;
+            border-radius: 5px;
+        }
     </style>
 </head>
 <body>
+    <!-- 네비게이션 -->
+    <div class="circle-nav" id="circleNav">
+        <span>三</span>
+    </div>
 
+    <div class="nav-menu" id="navMenu">
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#goals">Goals</a>
+        <a href="#contact">Contact</a>
+    </div>
 
-
-    <section class="hero">
+    <!-- 히어로 섹션 -->
+    <section id="hero" class="hero">
         <video autoplay muted loop class="hero-video">
             <source src="https://cdn.pixabay.com/video/2024/03/18/204565-924698132_tiny.mp4" type="video/mp4" preload="auto">
             Your browser does not support the video tag.
         </video>
         
-        <!--<img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8JUVCJUIwJTk0JUVCJThCJUE0JTIwJUVEJTkyJThEJUVBJUIyJUJEfGVufDB8fDB8fHww" alt="Hero Image" class="hero-image">-->
         <div class="hero-content">
             <h1 class="hero-title">신준호</h1>
             <p class="hero-subtitle">Creative Developer</p>
         </div>
     </section>
-    <section class="content-section">
-        <div class="grid-container">
+
+    <!-- 메인 콘텐츠 -->
+    <section id="about" class="content-section">
+        <!-- 프로필 섹션 -->
+        <div class="profile-section">
+            <div class="profile-card">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='200' viewBox='0 0 150 200'%3E%3Crect width='150' height='200' fill='%23f0f0f0'/%3E%3Ctext x='75' y='100' text-anchor='middle' dy='.3em' font-family='Arial, sans-serif' font-size='14' fill='%23666'%3E프로필 사진%3C/text%3E%3C/svg%3E" alt="신준호 프로필" class="profile-image">
+                <div class="profile-name">신준호</div>
+                <div class="profile-skills">
+                    <div class="skill-label">선호하는 기술 스택</div>
+                    <div class="skill-value">JAVA</div>
+                    <div class="skill-label" style="margin-top: 15px;">선호하는 포지션</div>
+                    <div class="skill-value">Back-End</div>
+                </div>
+            </div>
+
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>🎯 1학기 트랙</h3>
+                    <p><strong>JAVA(전공)</strong></p>
+                </div>
+
+                <div class="info-card">
+                    <h3>🎯 2학기 목표</h3>
+                    <ul>
+                        <li>다양한 프로젝트 3개 만들기</li>
+                        <li>여러 트랙 기술 배우기</li>
+                    </ul>
+                </div>
+
+                <div class="info-card">
+                    <h3>🎨 취미</h3>
+                    <p>여행</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>🏆 경험치</h3>
+                    <p>캡스톤 경진 대회 대상(프론트엔드 담당)</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>💭 하고 싶은 말</h3>
+                    <p>프로젝트 올인하며, 좋은 팀 분위기를 목적으로 하고 있습니다!</p>
+                </div>
+
+                <div class="info-card">
+                    <h3>🎭 기타</h3>
+                    <p><strong>#ENFP #열정</strong> 팀태을 팀원 구해요</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2학기 각오 섹션 -->
+        <div class="goals-section">
+            <h3>2학기 각오</h3>
+            <div class="goals-content">
+                <div class="goal-item">
+                    <h4>✅ 활발하고 명랑한 팀에서 프로젝트를 수행하고 싶습니다 😊</h4>
+                </div>
+                <div class="goal-item">
+                    <h4>✅ 코딩하는 것은 자신 있지만, <span style="color: #4CAF50;">디자인은 조금 자신 없습니다.</span> 이 부분을 도와주실 팀원 원합니다 😃</h4>
+                </div>
+            </div>
+        </div>
+
+        <!-- 기존 카드 섹션 -->
+        <div class="grid-container" style="margin-top: 80px;">
             <div class="card">
                 <h3>About Me</h3>
-                <p>창의적인 문제 해결과 아름다운 사용자 경험을 만드는 것을 좋아하는 개발자입니다.</p>
+                <p>창의적인 문제 해결과 아름다운 사용자 경험을 만드는 것을 좋아하는 개발자입니다. 전기전자공학과에서 컴퓨터공학과로 전과하여 더욱 깊이 있는 개발 지식을 쌓고 있습니다.</p>
             </div>
 
             <div class="card">
@@ -391,6 +550,7 @@
                     <span class="skill-tag">React</span>
                     <span class="skill-tag">TypeScript</span>
                     <span class="skill-tag">Three.js</span>
+                    <span class="skill-tag">Java</span>
                 </div>
             </div>
 
@@ -401,79 +561,32 @@
                 <p>📍 JeonJu, Korea</p>
             </div>
         </div>
+
+        <!-- 취미 섹션 -->
         <div class="image-grid">
             <h1>Hobby</h1>
         </div>
         <div class="image-grid">
-            <img src="https://cdn-icons-png.flaticon.com/128/4472/4472592.png" alt="Portfolio 1" class="portfolio-image">
-            <img src="https://cdn-icons-png.flaticon.com/128/5507/5507167.png" alt="Portfolio 2" class="portfolio-image">
-            <img src="https://cdn-icons-png.flaticon.com/128/4530/4530499.png" alt="Portfolio 3" class="portfolio-image">
+            <img src="https://cdn-icons-png.flaticon.com/128/4472/4472592.png" alt="여행" class="portfolio-image">
+            <img src="https://cdn-icons-png.flaticon.com/128/5507/5507167.png" alt="취미2" class="portfolio-image">
+            <img src="https://cdn-icons-png.flaticon.com/128/4530/4530499.png" alt="취미3" class="portfolio-image">
         </div>
-
-
-    
-
     </section>
 
-    <script>
-        // 스크롤 애니메이션
-        const cards = document.querySelectorAll('.card');
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('visible');
-                    }
-                });
-            },
-            {
-                threshold: 0.1
-            }
-        );
-
-        cards.forEach(card => observer.observe(card));
-
-    </script>
-
- 
-
-
-
- <!-- 동그란 네비게이션 버튼 -->
- <div class="circle-nav" id="circleNav">
-    <span>三</span>
-</div>
-
-
-<!-- 네비게이션 메뉴 -->
-<div class="nav-menu" id="navMenu">
-    <a href="#about">About Me</a>
-    <a href="#skills">Skills</a>
-    <a href="#contact">Contact</a>
-</div>
-
-<script>
-    // 동그란 네비게이션 버튼 클릭 이벤트
-    const circleNav = document.querySelector('.circle-nav');
-    const navMenu = document.querySelector('.nav-menu');
-
-    circleNav.addEventListener('click', () => {
-        navMenu.classList.toggle('open');
-    });
-</script>
-
+    <!-- 푸터 -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
                 <h4>특이사항</h4>
-                <p>전기전자공학과 ~ </p>
-                <p>컴퓨터공학과 전과</p>
+                <p>전기전자공학과 → 컴퓨터공학과 전과</p>
+                <p>캡스톤 경진 대회 대상 수상</p>
             </div>
             
             <div class="footer-section">
                 <h4>Quick Links</h4>
-                <a href="#projects">Projects</a>
+                <a href="#about">About</a>
                 <a href="#skills">Skills</a>
+                <a href="#goals">Goals</a>
                 <a href="#contact">Contact</a>
             </div>
             
@@ -506,5 +619,47 @@
             <p>영상, 아이콘 출처 : https://www.flaticon.com/kr/</p>
         </div>
     </footer>
+
+    <script>
+        // 스크롤 애니메이션
+        const cards = document.querySelectorAll('.card');
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            },
+            {
+                threshold: 0.1
+            }
+        );
+
+        cards.forEach(card => observer.observe(card));
+
+        // 네비게이션 토글
+        const circleNav = document.querySelector('.circle-nav');
+        const navMenu = document.querySelector('.nav-menu');
+
+        circleNav.addEventListener('click', () => {
+            navMenu.classList.toggle('open');
+        });
+
+        // 부드러운 스크롤
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    navMenu.classList.remove('open');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
